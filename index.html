@@ -20,12 +20,12 @@
   <ul id="cat-list"></ul>
   <div id="cat">
 
-    <h2 data-bind="text: name"></h2>
-    <h3 data-bind="text: level"></h3>
-    <div data-bind="text: clicks"></div>
-    <img src="" alt="cute cat" data-bind="click: addClicks, attr: {src: imageSrc}">
+    <h2 data-bind="text: currentCat().name"></h2>
+    <h3 data-bind="text: currentCat().level"></h3>
+    <div data-bind="text: currentCat().clicks"></div>
+    <img src="" alt="cute cat" data-bind="click: addClicks, attr: {src: currentCat().imageSrc}">
     <p>Nicknames:</p>
-    <ul data-bind="foreach: nicknames">
+    <ul data-bind="foreach: currentCat().nicknames">
       <li data-bind="text: $data"></li>
     </ul>
 

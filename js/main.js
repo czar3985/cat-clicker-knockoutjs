@@ -1,4 +1,4 @@
-var ViewModel = function () {
+var Cat = function () {
     this.clicks = ko.observable(0);
     this.name = ko.observable('Steve');
     this.imageSrc = ko.observable('img/adorable_640.jpg');
@@ -18,10 +18,14 @@ var ViewModel = function () {
             return "Ninja";
     }, this);
 
-    this.nicknames = ko.observableArray(['Stevie','Stev', 'Tevie', 'Tivetot', 'Isteban']);
+    this.nicknames = ko.observableArray(['Stevie', 'Stev', 'Tevie', 'Tivetot', 'Isteban']);
+};
+
+var ViewModel = function () {
+    this.currentCat = ko.observable(new Cat());
 
     this.addClicks = function () {
-        this.clicks(this.clicks() + 1);
+        this.currentCat().clicks(this.currentCat().clicks() + 1);
     };
 };
 
