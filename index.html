@@ -26,7 +26,7 @@
     <section class="cat-selector">
       <ul class="cat-list" data-bind="foreach: catList">
         <!--Cat names and links here-->
-        <li class="cat-link" data-bind="text: name"></li>
+        <li class="cat-link" data-bind="text: name, click: $parent.changeSelected"></li>
       </ul>
     </section>
 

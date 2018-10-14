@@ -67,6 +67,10 @@ var ViewModel = function () {
     this.addClicks = function () {
         vm.currentCat().clicks(vm.currentCat().clicks() + 1);
     };
+
+    this.changeSelected = function () {
+        vm.currentCat(this);
+    };
 };
 
 ko.applyBindings(new ViewModel());
