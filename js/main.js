@@ -22,10 +22,12 @@ var Cat = function () {
 };
 
 var ViewModel = function () {
+    var vm = this;
+
     this.currentCat = ko.observable(new Cat());
 
     this.addClicks = function () {
-        this.currentCat().clicks(this.currentCat().clicks() + 1);
+        vm.currentCat().clicks(vm.currentCat().clicks() + 1);
     };
 };
 
