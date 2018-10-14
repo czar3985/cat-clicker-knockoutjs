@@ -18,6 +18,8 @@ var ViewModel = function () {
             return "Ninja";
     }, this);
 
+    this.nicknames = ko.observableArray(['Stevie','Stev', 'Tevie', 'Tivetot', 'Isteban']);
+
     this.addClicks = function () {
         this.clicks(this.clicks() + 1);
     };

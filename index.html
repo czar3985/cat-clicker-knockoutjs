@@ -24,6 +24,11 @@
     <h3 data-bind="text: level"></h3>
     <div data-bind="text: clicks"></div>
     <img src="" alt="cute cat" data-bind="click: addClicks, attr: {src: imageSrc}">
+    <p>Nicknames:</p>
+    <ul data-bind="foreach: nicknames">
+      <li data-bind="text: $data"></li>
+    </ul>
+
 
   </div>
 
