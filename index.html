@@ -17,20 +17,37 @@
 </head>
 
 <body>
-  <ul id="cat-list"></ul>
-  <div id="cat" data-bind="with: currentCat">
+  <header>
+    <h1>Cat Clicker</h1>
+    <p>I will count how many times you clicked the picture of the cats below.</p>
+  </header>
 
-    <h2 data-bind="text: name"></h2>
-    <h3 data-bind="text: level"></h3>
-    <div data-bind="text: clicks"></div>
-    <img src="" alt="cute cat" data-bind="click: $parent.addClicks, attr: {src: imageSrc}">
-    <p>Nicknames:</p>
-    <ul data-bind="foreach: nicknames">
-      <li data-bind="text: $data"></li>
-    </ul>
+  <main class="cat-section">
+    <section class="cat-selector">
+      <ul class="cat-list" data-bind="foreach: catList">
+        <!--Cat names and links here-->
+        <li class="cat-link" data-bind="text: name"></li>
+      </ul>
+    </section>
 
+    <section class="specific-cat">
+      <!--Selected cat details here-->
+      <div class="cat-tile" data-bind="with: currentCat">
+        <p>
+          This is <b data-bind="text: name"></b>.
+          Now on level <b data-bind="text: level"></b>.
+          Number of clicks: <b data-bind="text: clicks"></b>
+        </p>
+        <p class="nickname-label">Nicknames:</p>
+        <ul class="nickname-list" data-bind="foreach: nicknames">
+          <li data-bind="text: $data"></li>
+        </ul>
+        <img class="cat-image" src="" alt="Cat picture"
+             data-bind="click: $parent.addClicks, attr: {src: imageSrc}" />
+      </div>
+    </section>
 
-  </div>
+  </main>
 
   <!--KnockoutJS Script-->
   <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>

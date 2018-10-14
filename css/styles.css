@@ -1,0 +1,160 @@
+/*
+ *
+ * Common
+ *
+ *
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px Roboto, Raleway;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+}
+
+/*
+ *
+ * Cat Section
+ *
+ *
+*/
+
+.cat-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cat-selector {
+  width: 25%;
+}
+
+.cat-list {
+  list-style: none;
+  padding: 0;
+  margin-right: 8px;
+}
+
+.cat-link {
+  margin-bottom: 0.5em;
+  padding: 5px;
+  border-radius: 0.5em;
+}
+
+.cat-link:hover {
+  cursor: pointer;
+}
+
+.specific-cat {
+  width: 75%;
+}
+
+.cat-tile {
+  width: 100%;
+}
+
+.cat-image {
+  width: 100%;
+  max-width: 640px;
+  margin-top: 15px;
+}
+
+.selected-cat {
+  background-color: lightgray;
+}
+
+.nickname-label {
+  display: inline;
+}
+
+.nickname-list {
+  display: inline;
+  list-style: none;
+  padding: 0;
+}
+
+.nickname-list li {
+  display: inline;
+}
+
+.nickname-list li:after {
+  content: ", ";
+}
+
+.nickname-list li:last-child:after {
+  content: "";
+}
+
+/*
+ *
+ * Admin Feature
+ *
+ *
+*/
+
+button {
+  display: block;
+  padding: 10px;
+  border-radius: 0.5em;
+  border-color: gray;
+  margin-bottom: 10px;
+}
+
+.admin-area {
+  width: 100%;
+  display: none;
+}
+
+#cancel-button,
+#submit-button {
+  margin-top: 10px;
+  display: inline;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+#clicks {
+  width: 70px;
+}
+
+/*
+ *
+ * Styling for responsiveness
+ *
+ *
+*/
+
+@media screen and (min-width: 400px) {
+  .cat-selector {
+    width: 20%;
+  }
+
+  .specific-cat {
+    width: 80%;
+  }
+
+  .cat-list {
+    margin-right: 20px;
+  }
+
+  .cat-link {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main, header {
+    width: 860px; /* 900px minus body padding */
+    margin: auto;
+  }
+}

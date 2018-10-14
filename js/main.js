@@ -28,7 +28,7 @@ var initialCats = [
         clicks: 0,
         imageSrc: 'img/treetop_640.jpg',
         nicknames: ['Clin', 'Hawkeye', 'Barton', 'Clintypoo', 'Clinter']
-    },
+    }
  ];
 
 var Cat = function (data) {
