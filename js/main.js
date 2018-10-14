@@ -3,6 +3,21 @@ var ViewModel = function () {
     this.name = ko.observable('Steve');
     this.imageSrc = ko.observable('img/adorable_640.jpg');
 
+    this.level = ko.computed(function () {
+        if (this.clicks() < 10)
+            return "Newborn";
+        else if (this.clicks() < 20)
+            return "Infant";
+        else if (this.clicks() < 30)
+            return "Kid";
+        else if (this.clicks() < 40)
+            return "Teen";
+        else if (this.clicks() < 50)
+            return "Adult";
+        else
+            return "Ninja";
+    }, this);
+
     this.addClicks = function () {
         this.clicks(this.clicks() + 1);
     };
