@@ -1,3 +1,4 @@
+//All cat data in an array
 var initialCats = [
     {
         name: 'Steve',
@@ -31,11 +32,13 @@ var initialCats = [
     }
  ];
 
+//Cat model portion of the Cat Clicker application
 var Cat = function (data) {
     this.clicks = ko.observable(data.clicks);
     this.name = ko.observable(data.name);
     this.imageSrc = ko.observable(data.imageSrc);
 
+    //The cat's level depends on the number of clicks it got
     this.level = ko.computed(function () {
         if (this.clicks() < 10)
             return "Newborn";
@@ -51,27 +54,37 @@ var Cat = function (data) {
             return "Ninja";
     }, this);
 
+    //A cat can have many nicknames
     this.nicknames = ko.observableArray(data.nicknames);
 };
 
+//ViewModel portion of the Cat Clicker application
 var ViewModel = function () {
-    var vm = this;
+    var vm = this;  //Save in a variable for accessing when context changes
 
+    //Populate the list of cats given the initial cat data
     this.catList = ko.observableArray([]);
     initialCats.forEach(function (catData) {
         vm.catList.push(new Cat(catData));
     });
 
+    //Remember which is the currently selected/displayed cat
+    //Initially, the first cat in the list is selected
     this.currentCat = ko.observable(this.catList()[0]);
 
+    //Change the clicks property for the cat whose image has been clicked
     this.addClicks = function () {
         vm.currentCat().clicks(vm.currentCat().clicks() + 1);
     };
 
+    //When a new cat is selected from the list on the page,
+    //reflect change in the currentCat property
     this.changeSelected = function () {
         vm.currentCat(this);
     };
 
+    //Change the list element's css background color depending
+    //on the cat selected
     this.selectedCatStatus = function (name) {
         if (name() === vm.currentCat().name())
             return 'selected-cat';

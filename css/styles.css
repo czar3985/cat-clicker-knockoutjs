@@ -28,6 +28,13 @@ body {
   flex-wrap: wrap;
 }
 
+/*
+ *
+ * Sidebar
+ *
+ *
+*/
+
 .cat-selector {
   width: 25%;
 }
@@ -48,6 +55,21 @@ body {
   cursor: pointer;
 }
 
+.selected-cat {
+  background-color: lightgray;
+}
+
+.not-selected-cat {
+  background-color: inherit;
+}
+
+/*
+ *
+ * Viewing Area
+ *
+ *
+*/
+
 .specific-cat {
   width: 75%;
 }
@@ -62,13 +84,12 @@ body {
   margin-top: 15px;
 }
 
-.selected-cat {
-  background-color: lightgray;
-}
-
-.not-selected-cat {
-  background-color: inherit;
-}
+/*
+ *
+ * Cat nicknames
+ *
+ *
+*/
 
 .nickname-label {
   display: inline;
@@ -90,45 +111,6 @@ body {
 
 .nickname-list li:last-child:after {
   content: "";
-}
-
-/*
- *
- * Admin Feature
- *
- *
-*/
-
-button {
-  display: block;
-  padding: 10px;
-  border-radius: 0.5em;
-  border-color: gray;
-  margin-bottom: 10px;
-}
-
-.admin-area {
-  width: 100%;
-  display: none;
-}
-
-#cancel-button,
-#submit-button {
-  margin-top: 10px;
-  display: inline;
-}
-
-input {
-  width: 100%;
-  padding: 0.5em;
-  margin: 2px 0;
-  display: inline-block;
-  border: 1px solid gray;
-  border-radius: 4px;
-}
-
-#clicks {
-  width: 70px;
 }
 
 /*

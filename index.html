@@ -19,21 +19,29 @@
 <body>
   <header>
     <h1>Cat Clicker</h1>
-    <p>I will count how many times you clicked the picture of the cats below.</p>
+    <p>
+      Add clicks to the cat images to indicate cuteness level.
+    </p>
   </header>
 
   <main class="cat-section">
+
+    <!--List of cats-->
     <section class="cat-selector">
+      <!--catList is a Knockout observable array.-->
+      <!--Upon selecting a cat from the list, run functions that changes-->
+      <!--current cat and changes the CSS of the cats in the list-->
       <ul class="cat-list" data-bind="foreach: catList">
-        <!--Cat names and links here-->
         <li class="cat-link" data-bind="text: name,
             click: $parent.changeSelected,
             css: $parent.selectedCatStatus(name)"></li>
       </ul>
     </section>
 
+    <!--Cat viewing area-->
     <section class="specific-cat">
-      <!--Selected cat details here-->
+      <!--Binding context is changed to current cat. Indicate the details.-->
+      <!--Add event listener for image clicks-->
       <div class="cat-tile" data-bind="with: currentCat">
         <p>
           This is <b data-bind="text: name"></b>.
@@ -48,12 +56,14 @@
              data-bind="click: $parent.addClicks, attr: {src: imageSrc}" />
       </div>
     </section>
-
   </main>
 
   <!--KnockoutJS Script-->
-  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>
-  <!--Script for the applications-->
+  <script type="text/javascript"
+          src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js">
+  </script>
+
+  <!--Script for the application-->
   <script src="js/main.js"></script>
 </body>
 
