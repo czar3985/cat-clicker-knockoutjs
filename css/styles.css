@@ -66,6 +66,10 @@ body {
   background-color: lightgray;
 }
 
+.not-selected-cat {
+  background-color: inherit;
+}
+
 .nickname-label {
   display: inline;
 }

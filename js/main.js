@@ -71,6 +71,13 @@ var ViewModel = function () {
     this.changeSelected = function () {
         vm.currentCat(this);
     };
+
+    this.selectedCatStatus = function (name) {
+        if (name() === vm.currentCat().name())
+            return 'selected-cat';
+        else
+            return 'not-selected-cat';
+    };
 };
 
 ko.applyBindings(new ViewModel());
